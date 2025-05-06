@@ -39,6 +39,8 @@ onMounted(async () => {
     state.job = response.data;
   } catch (error) {
     console.error('Error fetching job', error);
+    router.push('/not-found');
+    state.isLoading = false;
   } finally {
     state.isLoading = false;
   }
